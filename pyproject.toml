@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "factorypulse-lakehouse"
+version = "0.1.0"
+description = "Contract-aware telemetry lakehouse for the FactoryPulse platform."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "David Falcon"}]
+dependencies = [
+  "duckdb>=1.1.0",
+  "factorypulse-contracts @ git+https://github.com/david2526IA/factorypulse-contracts.git@ea89cbc7837e356104e73cfbb6276b26479e9732"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+factorypulse-lakehouse = "factorypulse_lakehouse.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
