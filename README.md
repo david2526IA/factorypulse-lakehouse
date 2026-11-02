@@ -66,4 +66,4 @@ This is a local integration reference. It demonstrates data contracts, quality b
 
 ## License
 
-MIT © 2026 David Falcon
+MIT © 2026 David
